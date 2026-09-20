@@ -1,0 +1,9 @@
+<section id="atlas" class="view" hidden>
+ <div class="atlas-heading"><div><div class="eyebrow">THE WHOLE COURSE / 一张地图，串起整本教材</div><h1>从一束光，到整个光电世界。</h1><p>按课本章节探索知识，回到原文找依据，让抽象关系动起来。</p></div><div class="atlas-counter"><b>9</b><span>课程章节</span><b id="atlas-topic-count"></b><span>节知识索引</span></div></div>
+ <div id="atlas-chapters" class="atlas-chapters" aria-label="全书章节"></div>
+ <div class="atlas-chapter-title"><div><span class="section-kicker" id="atlas-chapter-number"></span><h2 id="atlas-chapter-title"></h2><p id="atlas-chapter-intro"></p></div><button id="atlas-search-chapter" class="quiet">检索本章资料 ↗</button></div>
+ <div class="atlas-top-grid"><div class="atlas-demo"><div class="atlas-demo-top"><span id="atlas-demo-title"></span><button id="atlas-motion">Ⅱ 暂停</button></div><canvas id="atlas-canvas" width="1000" height="340" aria-label="当前章节的代表性概念演示"></canvas><div id="atlas-readings" class="atlas-readings" aria-live="polite"></div><div class="atlas-slider"><label for="atlas-param" id="atlas-param-label"></label><output id="atlas-param-value"></output><input type="range" id="atlas-param"></div><p id="atlas-boundary" class="atlas-boundary"></p></div><aside class="atlas-teaching"><span class="section-kicker">课堂上可以这样讲</span><h3 id="atlas-question"></h3><p id="atlas-intuition"></p><div id="atlas-equation" class="atlas-equation"></div><details id="atlas-answer"><summary>先预测，再展开解释</summary><p></p></details><div id="atlas-actions"></div></aside></div>
+ <div class="atlas-index-head"><div><h2>本章知识点</h2><p>按教材顺序组织；点击条目即可阅读对应原文。</p></div><label class="sr-only" for="atlas-filter">筛选全书知识点</label><input id="atlas-filter" placeholder="搜索全书知识点，例如：锁模、色散、液晶"></div>
+ <div class="atlas-content-grid"><div id="atlas-topic-list" class="atlas-topic-list"></div><article id="atlas-topic-reader" class="panel atlas-topic-reader"></article></div>
+ <p class="studio-footnote">全书目录取自已整理教材；章节导读与追问为预置教学示例。代表演示采用简化物理模型，未接入实时大模型。</p>
+</section>
