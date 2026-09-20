@@ -1,0 +1,1 @@
+Object.assign(window.PHOTONICS_IMAGES,{});
