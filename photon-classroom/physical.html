@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>光知课程 · 光电子学</title><link rel="icon" href="data:,"><link rel="stylesheet" href="physical.css"></head>
+<body>
+<header class="masthead"><a class="brand" href="index.html#showcase"><span aria-hidden="true">◈</span><b>光知<small>光电子学课程</small></b></a><nav aria-label="课程导航"><a href="index.html#showcase">光电子学课堂</a><a href="physical.html" aria-current="page">物理光学</a></nav><span class="private-label">本机私密阅读</span></header>
+<main>
+<header class="course-heading"><div><h1>物理光学 · 双书对照</h1><p>按课堂的顺序，找到另一种讲法。</p></div><div class="book-pair" aria-label="阅读顺序"><span><small>学习主线</small>授课教材</span><i aria-hidden="true">↔</i><span><small>对照理解</small>梁铨廷 · 第 5 版</span></div></header>
+<div class="workspace" id="workspace">
+<aside class="outline" id="outline"><div class="outline-title"><b>跟随授课顺序</b><button id="close-outline" aria-label="收起课程目录">收起</button></div><label for="outline-query" class="sr-only">搜索主教材小节</label><input id="outline-query" type="search" placeholder="找章节，如：全息、偏振"><div id="outline-tree"></div><p class="outline-foot">保留主教材第十一至十七章编号。两书公式与图示均可回到原页核对。</p></aside>
+<section class="reading-workspace" aria-label="双书阅读区">
+<div class="topic-heading"><div><p id="chapter-name"></p><h2 id="topic-title"></h2></div><div class="topic-actions"><button id="toggle-outline" aria-controls="outline" aria-expanded="true">收起目录</button><button id="complete-topic">标记学过</button></div></div>
+<div class="mapping"><div class="mapping-top"><b id="match-status"></b><span>主题对应，页码独立翻阅</span><a href="physical-mapping.md" target="_blank" rel="noopener">查看全书对应表</a></div><p id="mapping-note"></p><div id="reference-chips" class="reference-chips" aria-label="对应参考章节"></div></div>
+<div class="reading-toolbar"><div role="group" aria-label="阅读布局"><button data-layout="both" aria-pressed="true">双书对照</button><button data-layout="main" aria-pressed="false">只读主教材</button><button data-layout="liang" aria-pressed="false">只读梁书</button></div><button id="open-search">搜索两本书</button><a id="export-note" href="#">导出本节笔记</a></div>
+<div class="books" id="books"></div>
+<details class="notes" id="notes"><summary>本节对照笔记 <span id="note-summary">收起时不占阅读区</span></summary><div class="notes-inner"><label for="note-text">主教材如何说？梁书补充了什么？还有什么疑问？</label><textarea id="note-text" rows="5" placeholder="可记录两本书的页码、符号差异，以及自己的解释。"></textarea><button id="save-note">保存到此浏览器</button><span id="note-status" role="status"></span><details class="word-note"><summary>译名与符号对照提醒</summary><p>“倏逝波”与“隐失波”、“条纹可见度”与“对比度”、“夫琅和费”与“夫琅禾费”、“迈克耳逊”与“迈克耳孙”常指同一主题，全文检索会同时查找这些写法。</p><p>比较两书的场振幅、反射系数和偏振旋向时，先核对坐标方向、复指数的时间约定与观察方向。公式外形不同不一定表示结论矛盾。</p></details></div></details>
+<footer class="topic-pager"><button id="previous-topic">上一小节</button><span id="topic-progress"></span><button id="next-topic">下一小节</button></footer>
+</section></div>
+<footer class="page-footer">两本原教材完整保存在本机。搜索使用已有 OCR，可能有识别误差；原页是核对依据。笔记仅保存在当前浏览器，可导出备份。</footer>
+</main>
+<dialog id="search-dialog"><div class="dialog-header"><h2>搜索两本教材</h2><button data-close="search-dialog" aria-label="关闭搜索">关闭</button></div><form id="search-form"><label class="sr-only" for="book-query">教材关键词</label><input id="book-query" type="search" placeholder="试试：倏逝波、全息、马吕斯" required><label class="sr-only" for="search-book">搜索范围</label><select id="search-book"><option value="all">两本书</option><option value="main">主教材</option><option value="liang">梁书</option></select><button type="submit">查找</button></form><p id="search-status" role="status">输入关键词，结果附有原页位置。</p><div id="search-results"></div></dialog>
+<dialog id="image-dialog"><div class="dialog-header"><h2 id="image-title">教材原页</h2><button data-close="image-dialog" aria-label="关闭原页放大">关闭</button></div><div class="zoom-tools"><button id="zoom-out">缩小</button><button id="zoom-in">放大</button><a id="zoom-pdf" target="_blank" rel="noopener">打开原 PDF</a></div><div class="zoom-body"><img id="zoom-image" alt="放大的教材原页"></div></dialog>
+<script src="physical/data.js"></script><script src="physical.js"></script>
+</body></html>

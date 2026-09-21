@@ -1,0 +1,9 @@
+{
+  "name": "光知私密课堂",
+  "postStartCommand": "node .classroom/start.cjs",
+  "forwardPorts": [8766],
+  "portsAttributes": {
+    "8766": {"label": "光知课堂（保持 Private）", "onAutoForward": "openBrowser", "protocol": "http"}
+  },
+  "otherPortsAttributes": {"onAutoForward": "ignore"}
+}
