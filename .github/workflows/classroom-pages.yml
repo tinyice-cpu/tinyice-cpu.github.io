@@ -1,0 +1,40 @@
+name: Publish classroom and personal site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble complete dual-course site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download private-classroom-2026-09-21 --pattern classroom-private-20260921.zip --dir /tmp/classroom
+          echo '24c2434acd9d2b882e061b07b30061a808001b6b661438ac1016c4ce44d03eca  /tmp/classroom/classroom-private-20260921.zip' | sha256sum --check
+          unzip -q /tmp/classroom/classroom-private-20260921.zip 'private-dist/*' -d /tmp/classroom
+          mkdir -p /tmp/site/photon-classroom
+          cp -a /tmp/classroom/private-dist/. /tmp/site/photon-classroom/
+          rsync -a --exclude='.git' --exclude='.github' --exclude='.classroom' --exclude='.devcontainer' ./ /tmp/site/
+          test -s /tmp/site/photon-classroom/physical/main.pdf
+          test -s /tmp/site/photon-classroom/physical/liang.pdf
+          du -sh /tmp/site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
